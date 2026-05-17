@@ -641,6 +641,30 @@
         display: block;
       }
 
+      .form-status {
+        display: none;
+        border-radius: 14px;
+        padding: 14px 16px;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      .form-status.open {
+        display: block;
+      }
+
+      .form-status.error {
+        background: #fef2f2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+      }
+
+      .form-status.success {
+        background: #ecfdf5;
+        color: #047857;
+        border: 1px solid #a7f3d0;
+      }
+
       @media (max-width: 1100px) {
         .hero-grid,
         .proof-cards,
@@ -1064,22 +1088,28 @@
           <p style="margin:10px 0 0; color:#6b7280; line-height:1.7;">
             Share your hiring or operating needs in Vietnam. We will use this information to understand the service scope before follow-up.
           </p>
-          <form id="consultationForm" class="form-grid">
+          <form
+            id="consultationForm"
+            class="form-grid"
+            action="https://formspree.io/f/mdajnrgp"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New consultation request from Hire Right Solution website" />
             <div class="field">
               <label for="fullName">Full Name</label>
-              <input class="input" id="fullName" type="text" required />
+              <input class="input" id="fullName" name="fullName" type="text" required />
             </div>
             <div class="field">
               <label for="workEmail">Work Email</label>
-              <input class="input" id="workEmail" type="email" required />
+              <input class="input" id="workEmail" name="workEmail" type="email" required />
             </div>
             <div class="field">
               <label for="company">Company</label>
-              <input class="input" id="company" type="text" />
+              <input class="input" id="company" name="company" type="text" />
             </div>
             <div class="field">
               <label for="service">Interested Service</label>
-              <select class="input" id="service">
+              <select class="input" id="service" name="service">
                 <option>Market Seed Package</option>
                 <option selected>Growth Partner Package</option>
                 <option>Strategic Enterprise Package</option>
@@ -1090,13 +1120,18 @@
             </div>
             <div class="field">
               <label for="context">Hiring Volume or Team Context</label>
-              <input class="input" id="context" type="text" />
+              <input class="input" id="context" name="teamContext" type="text" />
             </div>
             <div class="field">
               <label for="message">Message</label>
-              <textarea class="input" id="message" rows="4"></textarea>
+              <textarea class="input" id="message" name="message" rows="4"></textarea>
             </div>
-            <button class="btn-primary" type="submit">Submit Request</button>
+            <div class="field" style="display:none;">
+              <label for="website">Website</label>
+              <input class="input" id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <div id="formStatus" class="form-status"></div>
+            <button class="btn-primary" id="submitButton" type="submit">Submit Request</button>
           </form>
         </div>
         <div class="success" id="successState">
@@ -1116,8 +1151,20 @@
       const formState = document.getElementById("formState");
       const successState = document.getElementById("successState");
       const serviceField = document.getElementById("service");
+      const formStatus = document.getElementById("formStatus");
+      const submitButton = document.getElementById("submitButton");
 
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      function setFormStatus(message, tone) {
+        formStatus.textContent = message;
+        formStatus.className = "form-status open " + tone;
+      }
+
+      function clearFormStatus() {
+        formStatus.textContent = "";
+        formStatus.className = "form-status";
+      }
 
       function openModal(service) {
         if (service) serviceField.value = service;
@@ -1132,6 +1179,9 @@
         serviceField.value = "Growth Partner Package";
         formState.style.display = "block";
         successState.classList.remove("open");
+        clearFormStatus();
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Request";
       }
 
       document.querySelectorAll("[data-open-modal]").forEach((button) => {
@@ -1147,8 +1197,45 @@
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        formState.style.display = "none";
-        successState.classList.add("open");
+        clearFormStatus();
+
+        const endpoint = form.getAttribute("action");
+        if (!endpoint || endpoint.includes("REPLACE_WITH_YOUR_FORMSPREE_ID")) {
+          setFormStatus(
+            "Form chưa được kết nối Formspree. Hãy thay REPLACE_WITH_YOUR_FORMSPREE_ID bằng endpoint thật từ tài khoản Formspree.",
+            "error"
+          );
+          return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        const formData = new FormData(form);
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          body: formData,
+        })
+          .then(async (response) => {
+            const payload = await response.json().catch(() => ({}));
+            if (!response.ok) {
+              throw new Error(payload.errors?.[0]?.message || "Unable to submit the request right now.");
+            }
+            formState.style.display = "none";
+            successState.classList.add("open");
+            clearFormStatus();
+          })
+          .catch((error) => {
+            setFormStatus(error.message || "Unable to submit the request right now.", "error");
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Request";
+          });
       });
     </script>
   </body>
