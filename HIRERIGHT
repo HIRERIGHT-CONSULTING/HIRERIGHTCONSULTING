@@ -1,1227 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire Right Solution</title>
+    <meta
+      name="description"
+      content="Executive Search, Background Check, and Payroll Outsourcing in Vietnam."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #1f2937;
+        --heading: #172554;
+        --muted: #64748b;
+        --line: #e5e7eb;
+        --blue: #1e3a8a;
+        --blue-strong: #2563eb;
+        --blue-soft: #dbeafe;
+        --sky: #7dd3fc;
+        --slate-950: #020617;
+        --slate-900: #0f172a;
+        --slate-800: #1e293b;
+        --slate-700: #334155;
+        --slate-300: #cbd5e1;
+        --slate-200: #e2e8f0;
+        --white-08: rgba(255, 255, 255, 0.08);
+        --white-10: rgba(255, 255, 255, 0.1);
+        --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.08);
+        --shadow-xl: 0 24px 60px rgba(59, 130, 246, 0.18);
+      }
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Hire Right Solution</title>
-      <meta
-        name="description"
-        content="Executive Search, Background Check, and Payroll Outsourcing in Vietnam."
-      />
-      <style>
-        :root {
-          --bg: #ffffff;
-          --text: #1f2937;
-          --muted: #64748b;
-          --heading: #1e2d6b;
-          --blue: #31469a;
-          --blue-hover: #3d56bb;
-          --blue-soft: #dbe7ff;
-          --sky: #7dd3fc;
-          --dark: #09111f;
-          --dark-2: #0f172a;
-          --line: #e5e7eb;
-          --card: #f8fafc;
-          --radius: 24px;
-          --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        * {
-          box-sizing: border-box;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        html {
-          scroll-behavior: smooth;
-        }
+      body {
+        margin: 0;
+        min-width: 320px;
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
 
-        body {
-          margin: 0;
-          min-width: 320px;
-          font-family: Inter, Arial, sans-serif;
-          color: var(--text);
-          background: var(--bg);
-        }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
 
-        button,
-        input,
-        select,
-        textarea {
-          font: inherit;
-        }
+      button {
+        border: 0;
+        cursor: pointer;
+      }
 
-        button {
-          border: 0;
-          cursor: pointer;
-        }
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-        .container {
-          width: min(100% - 32px, 1280px);
-          margin: 0 auto;
-        }
+      .container {
+        width: min(100% - 32px, 1280px);
+        margin: 0 auto;
+      }
 
-        .site-nav {
-          position: fixed;
-          top: 0;
-          z-index: 100;
-          width: 100%;
-          border-bottom: 1px solid rgba(229, 231, 235, 0.8);
-          background: rgba(255, 255, 255, 0.94);
-          backdrop-filter: blur(14px);
-        }
+      .section {
+        padding: 96px 0;
+      }
 
-        .site-nav .container {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          height: 84px;
-        }
+      .eyebrow {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
 
-        .brand {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-        }
+      .section-title {
+        margin: 20px 0 0;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        font-weight: 800;
+      }
 
-        .brand-mark {
-          width: 56px;
-          height: 56px;
-          border-radius: 14px;
-          background: var(--blue);
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          color: #fff;
-          box-shadow: 0 12px 28px rgba(49, 70, 154, 0.24);
-        }
+      .section-copy {
+        margin-top: 24px;
+        font-size: 1.125rem;
+        line-height: 1.8;
+      }
 
-        .brand-mark svg {
-          width: 30px;
-          height: 30px;
-        }
+      .site-nav {
+        position: fixed;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+        border-bottom: 1px solid #f3f4f6;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+      }
 
-        .brand-name {
-          font-size: 1.15rem;
-          font-weight: 800;
-          letter-spacing: -0.03em;
-          color: var(--heading);
-        }
+      .site-nav .container {
+        display: flex;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-        .nav-links {
-          display: flex;
-          align-items: center;
-          gap: 40px;
-        }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
 
-        .nav-links a {
-          font-weight: 600;
-          color: #4b5563;
-        }
+      .brand-mark {
+        display: inline-flex;
+        height: 56px;
+        width: 56px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: #31469a;
+        color: #fff;
+        box-shadow: 0 10px 24px rgba(49, 70, 154, 0.22);
+      }
 
-        .nav-links a:hover {
-          color: var(--blue);
-        }
+      .brand-mark svg {
+        width: 28px;
+        height: 28px;
+      }
 
-        .btn-primary {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 16px 30px;
-          border-radius: 999px;
-          background: var(--blue);
-          color: #fff;
-          font-weight: 700;
-          box-shadow: 0 18px 40px rgba(49, 70, 154, 0.26);
-          transition: 0.2s ease;
-        }
+      .brand-name {
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #25356f;
+      }
 
-        .btn-primary:hover {
-          background: var(--blue-hover);
-          transform: translateY(-1px);
-        }
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+      }
 
-        .hero {
-          position: relative;
-          min-height: 100vh;
-          padding-top: 84px;
-          color: #fff;
-          overflow: hidden;
-        }
+      .desktop-nav a {
+        font-weight: 600;
+        color: #4b5563;
+      }
 
-        .hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background:
-            linear-gradient(180deg, rgba(91, 115, 196, 0.35) 0%, rgba(8, 13, 27, 0.65) 54%, rgba(6, 10,
-  20, 0.92) 100%),
-            radial-gradient(circle at top left, rgba(122, 152, 255, 0.24), transparent 36%),
-            linear-gradient(rgba(11, 18, 38, 0.82), rgba(11, 18, 38, 0.82)),
-            url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?
-  q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
-        }
+      .desktop-nav a:hover {
+        color: var(--blue);
+      }
 
-        .hero-inner {
-          position: relative;
-          z-index: 1;
-          padding: 110px 0 88px;
-        }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border-radius: 999px;
+        background: #31469a;
+        padding: 16px 32px;
+        color: #fff;
+        font-weight: 700;
+        box-shadow: 0 18px 40px rgba(49, 70, 154, 0.28);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
 
-        .eyebrow {
-          margin: 0 0 24px;
-          font-size: 0.85rem;
-          font-weight: 700;
-          letter-spacing: 0.28em;
-          text-transform: uppercase;
-          color: #dbe7ff;
-        }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        background: #3b53b5;
+        box-shadow: 0 22px 48px rgba(49, 70, 154, 0.34);
+      }
 
-        .hero h1 {
-          max-width: 1080px;
-          margin: 0;
-          font-size: clamp(3.2rem, 8vw, 6.8rem);
-          line-height: 0.95;
-          letter-spacing: -0.06em;
-          font-weight: 900;
-        }
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #dbeafe;
+        font-weight: 700;
+      }
 
-        .hero-copy {
-          max-width: 950px;
-          margin-top: 28px;
-          font-size: clamp(1.15rem, 2vw, 1.9rem);
-          line-height: 1.55;
-          color: rgba(255, 255, 255, 0.92);
-        }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #1e40af;
+        border-radius: 14px;
+        padding: 16px 20px;
+        background: #fff;
+        color: #1e40af;
+        font-size: 1.125rem;
+        font-weight: 700;
+      }
 
-        .hero-actions {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 18px;
-          margin-top: 40px;
-        }
+      .btn-outline:hover {
+        background: #eff6ff;
+      }
 
-        .hero-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          color: #dbe7ff;
-          font-weight: 700;
-        }
+      .mobile-toggle {
+        display: none;
+        background: transparent;
+        color: #4b5563;
+        font-size: 1.75rem;
+        line-height: 1;
+      }
 
-        .hero-grid {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 16px;
-          max-width: 1040px;
-          margin-top: 48px;
-        }
+      .mobile-panel {
+        display: none;
+        border-top: 1px solid #f3f4f6;
+        background: #fff;
+        padding: 8px 16px 16px;
+      }
 
-        .glass-card {
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 22px;
-          background: rgba(255, 255, 255, 0.08);
-          padding: 20px;
-          backdrop-filter: blur(10px);
-        }
+      .mobile-panel.open {
+        display: block;
+      }
 
-        .glass-card h3 {
-          margin: 0;
-          font-size: 0.82rem;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          color: #dbe7ff;
-        }
+      .mobile-panel a,
+      .mobile-panel button {
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        padding: 12px 14px;
+        background: transparent;
+        text-align: left;
+        color: #374151;
+        font-weight: 600;
+      }
 
-        .glass-card p {
-          margin: 10px 0 0;
-          font-size: 0.95rem;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.78);
-        }
+      .mobile-panel a:hover,
+      .mobile-panel button:hover {
+        background: #eff6ff;
+        color: var(--blue);
+      }
 
-        .section {
-          padding: 96px 0;
-        }
+      .hero {
+        position: relative;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 80px;
+        color: #fff;
+      }
 
-        .section-title {
-          margin: 18px 0 0;
-          font-size: clamp(2.2rem, 5vw, 4rem);
-          line-height: 1.07;
-          letter-spacing: -0.04em;
-          font-weight: 800;
-        }
+      .hero-bg,
+      .hero-bg::before,
+      .hero-bg::after {
+        position: absolute;
+        inset: 0;
+      }
 
-        .section-copy {
-          margin-top: 22px;
-          font-size: 1.12rem;
-          line-height: 1.8;
-        }
+      .hero-bg {
+        background:
+          linear-gradient(180deg, rgba(91, 115, 196, 0.38) 0%, rgba(8, 13, 27, 0.66) 54%, rgba(6, 10, 20, 0.92) 100%),
+          radial-gradient(circle at top left, rgba(122, 152, 255, 0.24), transparent 36%),
+          linear-gradient(rgba(11, 18, 38, 0.82), rgba(11, 18, 38, 0.82)),
+          url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop")
+            center/cover no-repeat;
+      }
 
-        .dark-section {
-          background: var(--dark);
-          color: #fff;
-        }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 96px 0;
+      }
 
-        .two-col {
-          display: grid;
-          gap: 32px;
-          align-items: start;
-        }
+      .hero-title {
+        max-width: 1080px;
+        margin: 0;
+        font-size: clamp(3.5rem, 8vw, 7rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        font-weight: 900;
+      }
 
-        .proof-layout {
-          grid-template-columns: 1.1fr 1.4fr;
-        }
+      .hero-copy {
+        max-width: 980px;
+        margin-top: 32px;
+        font-size: clamp(1.3rem, 2.2vw, 2rem);
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.92);
+      }
 
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        margin-top: 44px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        max-width: 1020px;
+        margin-top: 48px;
+      }
+
+      .glass-card {
+        border: 1px solid var(--white-10);
+        border-radius: 24px;
+        background: var(--white-08);
+        padding: 20px;
+        backdrop-filter: blur(10px);
+      }
+
+      .glass-card .icon {
+        margin-bottom: 12px;
+        color: #bfdbfe;
+        font-size: 1.4rem;
+      }
+
+      .glass-card h3 {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #dbeafe;
+      }
+
+      .glass-card p {
+        margin: 12px 0 0;
+        font-size: 0.95rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .dark-section {
+        background: var(--slate-950);
+        color: #fff;
+      }
+
+      .two-col {
+        display: grid;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .proof-grid {
+        grid-template-columns: 1.1fr 1.4fr;
+      }
+
+      .proof-cards,
+      .validation-cards,
+      .faq-grid,
+      .why-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .proof-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dark-card {
+        border: 1px solid var(--white-10);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 24px;
+      }
+
+      .dark-card h3,
+      .service-card h3,
+      .faq-card h3,
+      .why-card h3,
+      .package-card h3 {
+        margin: 0;
+      }
+
+      .dark-card p,
+      .service-card p,
+      .faq-card p,
+      .why-card p,
+      .package-card p {
+        margin: 12px 0 0;
+      }
+
+      .light-center {
+        max-width: 860px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .services-wrap {
+        display: grid;
+        gap: 32px;
+        margin-top: 64px;
+      }
+
+      .service-card {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1.1fr 0.9fr;
+        border: 1px solid #e2e8f0;
+        border-radius: 32px;
+        background: #f8fafc;
+        padding: 40px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .service-card.inverse {
+        border-color: #0f172a;
+        background: #020617;
+        color: #fff;
+      }
+
+      .service-badge {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .service-card:not(.inverse) .service-badge {
+        background: #dbeafe;
+        color: #1d4ed8;
+      }
+
+      .service-card.inverse .service-badge {
+        background: rgba(255, 255, 255, 0.1);
+        color: #7dd3fc;
+      }
+
+      .service-card h3 {
+        margin-top: 24px;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      .service-card .copy {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #475569;
+      }
+
+      .service-card.inverse .copy,
+      .service-card.inverse .bullet-list span {
+        color: #cbd5e1;
+      }
+
+      .service-side {
+        border-radius: 28px;
+        background: #fff;
+        padding: 28px;
+      }
+
+      .service-card.inverse .service-side {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .service-side .mini-icon,
+      .why-card .mini-icon {
+        display: inline-flex;
+        height: 56px;
+        width: 56px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+
+      .service-card:not(.inverse) .mini-icon {
+        background: #eff6ff;
+        color: #1d4ed8;
+      }
+
+      .service-card.inverse .mini-icon,
+      .why-card .mini-icon {
+        background: rgba(125, 211, 252, 0.12);
+        color: #7dd3fc;
+      }
+
+      .service-side h4 {
+        margin: 24px 0 0;
+        font-size: 1.125rem;
+      }
+
+      .bullet-list {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .bullet-list li {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .bullet-list li + li {
+        margin-top: 16px;
+      }
+
+      .check {
+        color: #10b981;
+        font-weight: 800;
+      }
+
+      .service-card.inverse .check {
+        color: #7dd3fc;
+      }
+
+      .validation-section {
+        background: #f8fafc;
+      }
+
+      .validation-grid {
+        grid-template-columns: 0.95fr 1.05fr;
+      }
+
+      .validation-callout {
+        margin-top: 32px;
+        border: 1px solid #dbeafe;
+        border-radius: 24px;
+        background: #eff6ff;
+        padding: 24px;
+        color: #172554;
+      }
+
+      .validation-cards .card,
+      .faq-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 28px;
+        background: #fff;
+        padding: 28px;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+      }
+
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+      }
+
+      .package-card {
+        position: relative;
+        border-radius: 24px;
+        padding: 32px;
+      }
+
+      .package-card.standard {
+        border: 1px solid #e2e8f0;
+        background: rgba(248, 250, 252, 0.7);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      .package-card.featured {
+        border: 2px solid #3b82f6;
+        background: #fff;
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-20px);
+      }
+
+      .popular-pill {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        background: #3b82f6;
+        padding: 8px 20px;
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .package-kicker {
+        margin-bottom: 8px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #2563eb;
+      }
+
+      .package-card h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: #0f172a;
+      }
+
+      .package-summary {
+        min-height: 64px;
+        color: #64748b;
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .package-tier {
+        margin: 24px 0 32px;
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        color: #0f172a;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-card {
+        border: 1px solid var(--white-10);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 24px;
+      }
+
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer {
+        border-top: 1px solid #1e293b;
+        background: #020617;
+        padding: 80px 0 40px;
+        color: #cbd5e1;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.8fr 0.8fr 0.9fr;
+        gap: 48px;
+      }
+
+      .footer h2,
+      .footer h3 {
+        color: #fff;
+      }
+
+      .footer p,
+      .footer li,
+      .footer a {
+        line-height: 1.8;
+      }
+
+      .footer-list {
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .footer-list li + li {
+        margin-top: 12px;
+      }
+
+      .footer-bottom {
+        margin-top: 56px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+        color: #64748b;
+        font-size: 0.95rem;
+      }
+
+      .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: rgba(2, 6, 23, 0.68);
+        backdrop-filter: blur(8px);
+      }
+
+      .modal.open {
+        display: flex;
+      }
+
+      .modal-card {
+        width: min(100%, 640px);
+        border-radius: 28px;
+        background: #fff;
+        padding: 32px;
+        box-shadow: 0 28px 80px rgba(15, 23, 42, 0.22);
+      }
+
+      .modal-close {
+        float: right;
+        background: transparent;
+        color: #64748b;
+        font-size: 1.5rem;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #1e293b;
+      }
+
+      .input-light {
+        width: 100%;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        padding: 12px 16px;
+        outline: none;
+      }
+
+      .input-light:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.18);
+      }
+
+      .submit-note {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #6b7280;
+      }
+
+      .success-box {
+        display: none;
+        padding: 16px 0 8px;
+      }
+
+      .success-box.open {
+        display: block;
+      }
+
+      .success-icon {
+        display: inline-flex;
+        height: 56px;
+        width: 56px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: #dbeafe;
+        color: #1d4ed8;
+        font-size: 1.75rem;
+      }
+
+      .arrow {
+        font-size: 1.1em;
+      }
+
+      @media (max-width: 1100px) {
+        .hero-grid,
+        .packages-grid,
+        .footer-grid,
         .proof-cards,
         .faq-grid,
         .why-grid {
-          display: grid;
-          gap: 20px;
-        }
-
-        .proof-cards {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .dark-card,
-        .faq-card,
-        .why-card {
-          border-radius: 28px;
-          padding: 24px;
-        }
-
-        .dark-card {
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.04);
-        }
-
-        .light-center {
-          max-width: 860px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        .services-wrap {
-          display: grid;
-          gap: 32px;
-          margin-top: 64px;
-        }
-
+        .proof-grid,
+        .validation-grid,
         .service-card {
-          display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 32px;
-          border-radius: 32px;
-          border: 1px solid #e2e8f0;
-          background: #f8fafc;
-          padding: 40px;
-          box-shadow: var(--shadow);
-        }
-
-        .service-card.inverse {
-          border-color: #0f172a;
-          background: #020617;
-          color: #fff;
-        }
-
-        .pill {
-          display: inline-flex;
-          padding: 10px 16px;
-          border-radius: 999px;
-          font-size: 0.76rem;
-          font-weight: 800;
-          letter-spacing: 0.24em;
-          text-transform: uppercase;
-        }
-
-        .service-card .pill {
-          background: #dbeafe;
-          color: #1d4ed8;
-        }
-
-        .service-card.inverse .pill {
-          background: rgba(255, 255, 255, 0.1);
-          color: var(--sky);
-        }
-
-        .service-card h3 {
-          margin: 24px 0 0;
-          font-size: clamp(2rem, 3vw, 3rem);
-          line-height: 1.1;
-          letter-spacing: -0.03em;
-        }
-
-        .service-copy {
-          margin-top: 18px;
-          font-size: 1.12rem;
-          line-height: 1.8;
-          color: #475569;
-        }
-
-        .service-card.inverse .service-copy,
-        .service-card.inverse .service-side p,
-        .service-card.inverse .service-side li {
-          color: #cbd5e1;
-        }
-
-        .service-side {
-          border-radius: 28px;
-          background: #fff;
-          padding: 28px;
-        }
-
-        .service-card.inverse .service-side {
-          background: rgba(255, 255, 255, 0.05);
-        }
-
-        .service-side h4 {
-          margin: 0 0 18px;
-          font-size: 1.15rem;
-        }
-
-        .bullet-list {
-          margin: 0;
-          padding: 0;
-          list-style: none;
-        }
-
-        .bullet-list li {
-          display: flex;
-          gap: 12px;
-          align-items: flex-start;
-          line-height: 1.75;
-        }
-
-        .bullet-list li + li {
-          margin-top: 14px;
-        }
-
-        .check {
-          color: #10b981;
-          font-weight: 800;
-        }
-
-        .service-card.inverse .check {
-          color: var(--sky);
-        }
-
-        .validation {
-          background: #f8fafc;
-        }
-
-        .validation-layout {
-          grid-template-columns: 0.95fr 1.05fr;
-        }
-
-        .callout,
-        .validation-card {
-          border-radius: 28px;
-        }
-
-        .callout {
-          margin-top: 28px;
-          border: 1px solid #dbeafe;
-          background: #eff6ff;
-          padding: 24px;
-          color: #172554;
-        }
-
-        .validation-list {
-          display: grid;
-          gap: 20px;
-        }
-
-        .validation-card {
-          border: 1px solid #e2e8f0;
-          background: #fff;
-          padding: 28px;
-          box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
-        }
-
-        .packages-grid {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 28px;
-          margin-top: 64px;
-        }
-
-        .package-card {
-          position: relative;
-          border-radius: 24px;
-          padding: 32px;
-        }
-
-        .package-card.standard {
-          border: 1px solid #e2e8f0;
-          background: rgba(248, 250, 252, 0.75);
-          box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+          grid-template-columns: 1fr;
         }
 
         .package-card.featured {
-          border: 2px solid #3b82f6;
-          background: #fff;
-          box-shadow: 0 24px 60px rgba(59, 130, 246, 0.18);
-          transform: translateY(-16px);
+          transform: none;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .desktop-nav {
+          display: none;
         }
 
-        .badge {
-          position: absolute;
-          left: 50%;
-          top: 0;
-          transform: translate(-50%, -50%);
-          padding: 8px 18px;
-          border-radius: 999px;
-          background: #3b82f6;
-          color: #fff;
-          font-size: 0.82rem;
-          font-weight: 800;
-          text-transform: uppercase;
+        .mobile-toggle {
+          display: inline-flex;
         }
 
-        .package-kicker {
-          font-size: 0.82rem;
-          font-weight: 700;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          color: #2563eb;
+        .hero-content {
+          padding: 72px 0;
         }
 
-        .package-card h3 {
-          margin: 10px 0 0;
-          font-size: 2rem;
-          color: #0f172a;
-          letter-spacing: -0.04em;
-        }
-
-        .package-summary {
-          min-height: 64px;
-          margin-top: 12px;
-          color: #64748b;
-          line-height: 1.75;
-        }
-
-        .package-tier {
-          margin: 22px 0 28px;
-          font-size: 3.5rem;
-          font-weight: 800;
-          letter-spacing: -0.05em;
-          color: #0f172a;
-        }
-
-        .why-section {
-          background: #172554;
-          color: #fff;
-        }
-
-        .why-layout {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .why-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .why-card {
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.04);
-        }
-
-        .faq-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          margin-top: 64px;
-        }
-
-        .faq-card {
-          border: 1px solid #e2e8f0;
-          background: #f8fafc;
-        }
-
-        .footer {
-          background: #020617;
-          color: #cbd5e1;
-          border-top: 1px solid #1e293b;
-          padding: 80px 0 40px;
-        }
-
+        .hero-grid,
+        .proof-cards,
+        .packages-grid,
+        .why-grid,
+        .faq-grid,
         .footer-grid {
-          display: grid;
-          grid-template-columns: 1.1fr 0.8fr 0.8fr 0.9fr;
-          gap: 40px;
+          grid-template-columns: 1fr;
         }
 
-        .footer h2,
-        .footer h3 {
-          color: #fff;
+        .section {
+          padding: 80px 0;
         }
 
-        .footer-list {
-          list-style: none;
-          padding: 0;
-          margin: 20px 0 0;
-        }
-
-        .footer-list li + li {
-          margin-top: 12px;
-        }
-
-        .footer-bottom {
-          margin-top: 56px;
-          padding-top: 24px;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          color: #64748b;
-        }
-
-        .modal {
-          position: fixed;
-          inset: 0;
-          z-index: 200;
-          display: none;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-          background: rgba(2, 6, 23, 0.68);
-          backdrop-filter: blur(8px);
-        }
-
-        .modal.open {
-          display: flex;
-        }
-
+        .service-card,
         .modal-card {
-          width: min(100%, 640px);
-          border-radius: 28px;
-          background: #fff;
-          padding: 32px;
-          box-shadow: 0 28px 80px rgba(15, 23, 42, 0.22);
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 24px, 1280px);
         }
 
-        .modal-close {
-          float: right;
-          background: transparent;
-          font-size: 1.5rem;
-          color: #64748b;
+        .brand-name {
+          font-size: 1rem;
         }
 
-        .form-grid {
-          display: grid;
-          gap: 16px;
-          margin-top: 24px;
+        .brand-mark {
+          height: 48px;
+          width: 48px;
         }
 
-        .field label {
-          display: block;
-          margin-bottom: 8px;
-          font-weight: 600;
-          color: #1e293b;
+        .hero-title {
+          font-size: 3.4rem;
         }
 
-        .input {
+        .hero-copy {
+          font-size: 1.15rem;
+        }
+
+        .btn-primary,
+        .btn-outline {
           width: 100%;
-          border: 1px solid #d1d5db;
-          border-radius: 12px;
-          padding: 12px 16px;
-          outline: none;
         }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="container">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 3v6c0 4.6-3 8.9-7 10-4-1.1-7-5.4-7-10V6l7-3z"></path>
+              <path d="M9.2 11.8l1.9 1.9 3.7-4.2"></path>
+            </svg>
+          </span>
+          <span class="brand-name">Hire Right Solution</span>
+        </a>
 
-        .input:focus {
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.18);
-        }
-
-        .success {
-          display: none;
-        }
-
-        .success.open {
-          display: block;
-        }
-
-        @media (max-width: 1100px) {
-          .hero-grid,
-          .proof-cards,
-          .packages-grid,
-          .faq-grid,
-          .why-grid,
-          .footer-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .proof-layout,
-          .validation-layout,
-          .why-layout,
-          .service-card {
-            grid-template-columns: 1fr;
-          }
-
-          .package-card.featured {
-            transform: none;
-          }
-        }
-
-        @media (max-width: 860px) {
-          .nav-links {
-            display: none;
-          }
-
-          .hero-grid,
-          .proof-cards,
-          .packages-grid,
-          .faq-grid,
-          .why-grid,
-          .footer-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .service-card {
-            padding: 24px;
-          }
-
-          .section {
-            padding: 80px 0;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .container {
-            width: min(100% - 24px, 1280px);
-          }
-
-          .hero h1 {
-            font-size: 3.2rem;
-          }
-
-          .hero-copy {
-            font-size: 1.1rem;
-          }
-
-          .btn-primary {
-            width: 100%;
-          }
-        }
-      </style>
-    </head>
-    <body>
-      <nav class="site-nav">
-        <div class="container">
-          <a class="brand" href="#top">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-
-  linecap="round" stroke-linejoin="round">
-                <path d="M12 3l7 3v6c0 4.6-3 8.9-7 10-4-1.1-7-5.4-7-10V6l7-3z"></path>
-                <path d="M9.2 11.8l1.9 1.9 3.7-4.2"></path>
-              </svg>
-            </span>
-            <span class="brand-name">Hire Right Solution</span>
-          </a>
-
-          <div class="nav-links">
-            <a href="#services">Services</a>
-            <a href="#proof">Proof</a>
-            <a href="#packages">Packages</a>
-            <a href="#faq">FAQ</a>
-            <button class="btn-primary" data-open-modal>Schedule a Consultation</button>
-          </div>
+        <div class="desktop-nav">
+          <a href="#services">Services</a>
+          <a href="#proof">Proof</a>
+          <a href="#packages">Packages</a>
+          <a href="#faq">FAQ</a>
+          <button class="btn-primary" data-open-modal>Schedule a Consultation</button>
         </div>
-      </nav>
 
-      <main id="top">
-        <section class="hero">
-          <div class="hero-inner">
-            <div class="container">
-              <p class="eyebrow">Hire Right Solution</p>
-              <h1>Executive Search, Background Check, and Payroll Outsourcing in Vietnam.</h1>
-              <p class="hero-copy">
-                Hire Right Solution helps employers enter, hire, screen, and operate in Vietnam with
-                background verification workflows, confidential executive search support, and payroll
-                outsourcing coordination designed for local execution.
-              </p>
-              <div class="hero-actions">
-                <button class="btn-primary" data-open-modal>Schedule a Consultation</button>
-                <a class="hero-link" href="#services">Explore Core Services →</a>
-              </div>
-
-              <div class="hero-grid">
-                <article class="glass-card">
-                  <h3>Vietnam-Focused</h3>
-                  <p>Background screening, executive search, and payroll support built for local hiring
-  and operating realities.</p>
-                </article>
-                <article class="glass-card">
-                  <h3>Employer-Grade</h3>
-                  <p>Structured workflows designed for hiring teams, finance leads, and regional
-  operators who need dependable execution.</p>
-                </article>
-                <article class="glass-card">
-                  <h3>Confidential Delivery</h3>
-                  <p>Suitable for sensitive leadership searches, candidate screening, and internal
-  stakeholder coordination.</p>
-                </article>
-                <article class="glass-card">
-                  <h3>Consultative Support</h3>
-                  <p>Strategic guidance for employers entering Vietnam or tightening risk controls
-  around local operations.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="proof" class="section dark-section">
-          <div class="container">
-            <div class="two-col proof-layout">
-              <div>
-                <p class="eyebrow" style="color:#7dd3fc;">Proof and Positioning</p>
-                <h2 class="section-title">Trusted operational support for employers hiring and operating
-  in Vietnam.</h2>
-                <p class="section-copy" style="color:#cbd5e1;">
-                  Buyers evaluating a new service partner need more than a promise. They need to
-  understand how screening, search, and payroll support are delivered, how risk is controlled, and why
-  the operating approach is dependable in a Vietnam context.
-                </p>
-              </div>
-              <div class="proof-cards">
-                <article class="dark-card">
-                  <h3>Structured Screening Delivery</h3>
-                  <p>Candidate intake, consent handling, verification tracking, and reporting are framed
-  as repeatable workflows rather than ad-hoc follow-up.</p>
-                </article>
-                <article class="dark-card">
-                  <h3>Search Process Control</h3>
-                  <p>Executive search engagements benefit from clearer role calibration, target mapping,
-  stakeholder alignment, and confidential outreach discipline.</p>
-                </article>
-                <article class="dark-card">
-                  <h3>Operational Continuity</h3>
-                  <p>Payroll and back-office support are positioned to reduce local execution risk for
-  employers building or scaling teams in Vietnam.</p>
-                </article>
-                <article class="dark-card">
-                  <h3>Buyer Confidence Signals</h3>
-                  <p>References, measurable outcomes, compliance credentials, and team credibility
-  should reinforce the quality of the service before a buyer commits to a conversation.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="services" class="section">
-          <div class="container">
-            <div class="light-center">
-              <p class="eyebrow" style="color:#2563eb;">Core Services</p>
-              <h2 class="section-title" style="color:#020617;">Core services for employers hiring and
-  operating in Vietnam.</h2>
-              <p class="section-copy" style="color:#475569;">
-                Each service area is positioned around a real operational need: hiring verification,
-  confidential talent acquisition, or recurring payroll support.
-              </p>
-            </div>
-
-            <div class="services-wrap">
-              <article class="service-card">
-                <div>
-                  <span class="pill">Background Check Vietnam</span>
-                  <h3>Pre-employment screening built for Vietnam hiring and compliance workflows.</h3>
-                  <p class="service-copy">
-                    Hire Right Solution manages identity checks, employment verification, education
-  validation, reference checks, and criminal-record coordination through a structured employer-ready
-  workflow.
-                  </p>
-                  <button class="btn-primary" style="margin-top:28px; background:#020617;" data-open-
-  modal data-service="Background Check Vietnam">Request a Background Check Consultation</button>
-                </div>
-                <div class="service-side">
-                  <h4>What this service should communicate to buyers</h4>
-                  <ul class="bullet-list">
-                    <li><span class="check">✓</span><span>Reduce manual follow-up across HR, operations,
-  and hiring managers.</span></li>
-                    <li><span class="check">✓</span><span>Standardize candidate intake, consent, and
-  verification scope management.</span></li>
-                    <li><span class="check">✓</span><span>Support higher-confidence hiring for local
-  teams and cross-border employers.</span></li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="service-card inverse">
-                <div>
-                  <span class="pill">Executive Search Vietnam</span>
-                  <h3>Confidential executive search for critical hires in Vietnam.</h3>
-                  <p class="service-copy">
-                    From calibration and target mapping to discreet outreach and shortlist management,
-  we support executive and specialist hiring where speed, fit, and confidentiality matter.
-                  </p>
-                  <button class="btn-primary" style="margin-top:28px; background:#0ea5e9;" data-open-
-  modal data-service="Executive Search Vietnam">Discuss an Executive Search Mandate</button>
-                </div>
-                <div class="service-side">
-                  <h4>What this service should communicate to buyers</h4>
-                  <ul class="bullet-list">
-                    <li><span class="check">✓</span><span>Designed for leadership, specialist, and hard-
-  to-fill commercial or operational roles.</span></li>
-                    <li><span class="check">✓</span><span>Sharper stakeholder alignment before outreach
-  starts.</span></li>
-                    <li><span class="check">✓</span><span>Cleaner process control for confidential or
-  business-critical mandates.</span></li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="service-card">
-                <div>
-                  <span class="pill">Vietnam Payroll Outsourcing</span>
-                  <h3>Payroll outsourcing support that reduces administrative friction in Vietnam.</h3>
-                  <p class="service-copy">
-                    We help employers coordinate payroll operations, reporting readiness, and recurring
-  processing needs so finance and people teams can work with more consistency and less local complexity.
-                  </p>
-                  <button class="btn-primary" style="margin-top:28px; background:#020617;" data-open-
-  modal data-service="Vietnam Payroll Outsourcing">Talk About Payroll Outsourcing</button>
-                </div>
-                <div class="service-side">
-                  <h4>What this service should communicate to buyers</h4>
-                  <ul class="bullet-list">
-                    <li><span class="check">✓</span><span>Support monthly payroll coordination and
-  reporting discipline.</span></li>
-                    <li><span class="check">✓</span><span>Reduce operational drag for new entities and
-  scaling teams.</span></li>
-                    <li><span class="check">✓</span><span>Fit alongside accounting, market-entry, and
-  local operating support.</span></li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section validation">
-          <div class="container">
-            <div class="two-col validation-layout">
-              <div>
-                <p class="eyebrow" style="color:#2563eb;">Buyer Validation</p>
-                <h2 class="section-title" style="color:#020617;">What serious buyers want to verify
-  before they engage a service partner.</h2>
-                <p class="section-copy" style="color:#475569;">
-                  The strongest service pages do not rely only on positioning. They also help employers
-  validate experience, delivery discipline, and execution credibility before the first call.
-                </p>
-                <div class="callout">
-                  <strong>What to Surface Prominently</strong>
-                  <p style="margin:10px 0 0; line-height:1.75;">
-                    Client names, turnaround metrics, case studies, team credentials, and compliance
-  badges should appear close to the top of the page to reduce uncertainty and improve conversion
-  quality.
-                  </p>
-                </div>
-              </div>
-              <div class="validation-list">
-                <article class="validation-card">
-                  <h3>Client References and Outcomes</h3>
-                  <p>Employers evaluating a new service partner want evidence that the work has been
-  done before and that the outcomes were commercially useful, not just operationally completed.</p>
-                </article>
-                <article class="validation-card">
-                  <h3>Compliance and Delivery Standards</h3>
-                  <p>Confidence improves when buyers can see how screening, payroll, and search work are
-  governed, documented, and aligned to local operating expectations.</p>
-                </article>
-                <article class="validation-card">
-                  <h3>Team Credibility and Specialization</h3>
-                  <p>Decision-makers need clarity on who is behind the service, how experienced the team
-  is, and why the engagement should be trusted for sensitive or business-critical work.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="packages" class="section" style="border-top:1px solid #f3f4f6;">
-          <div class="container">
-            <div class="light-center">
-              <p class="eyebrow" style="color:#2563eb;">Packages</p>
-              <h2 class="section-title" style="color:#172554;">Strategic Service Packages</h2>
-              <p class="section-copy" style="color:#475569;">
-                Choose the screening depth that fits your hiring risk level, candidate seniority, and
-  internal verification requirements.
-              </p>
-            </div>
-
-            <div class="packages-grid">
-              <article class="package-card standard">
-                <div class="package-kicker">Background Check for Entry-Level Hiring</div>
-                <h3>Market Seed</h3>
-                <p class="package-summary">Ideal for entry-level and operational roles.</p>
-                <div class="package-tier">Basic</div>
-                <ul class="bullet-list">
-                  <li><span class="check">✓</span><span>Identity Vetting (ID/Passport)</span></li>
-                  <li><span class="check">✓</span><span>Basic Employment History (1 Past Employer)</
-  span></li>
-                  <li><span class="check">✓</span><span>Standard E-Consent Portal Access</span></li>
-                </ul>
-                <button class="btn-primary" style="width:100%; margin-top:28px;" data-open-modal data-
-  service="Market Seed Package">Select Package</button>
-              </article>
-
-              <article class="package-card featured">
-                <div class="badge">Most Popular</div>
-                <div class="package-kicker">Mid-Level Screening and Reference Verification</div>
-                <h3>Growth Partner</h3>
-                <p class="package-summary">Comprehensive vetting for mid-level management.</p>
-                <div class="package-tier">Standard</div>
-                <ul class="bullet-list">
-                  <li><span class="check">✓</span><span>All Market Seed features</span></li>
-                  <li><span class="check">✓</span><span>Social Insurance vs. CV Cross-checking</span></
-  li>
-                  <li><span class="check">✓</span><span>Education & Degree Verification</span></li>
-                  <li><span class="check">✓</span><span>Reference Calls (2 contacts)</span></li>
-                </ul>
-                <button class="btn-primary" style="width:100%; margin-top:28px;" data-open-modal data-
-  service="Growth Partner Package">Select Package</button>
-              </article>
-
-              <article class="package-card standard">
-                <div class="package-kicker">Executive Screening and Risk Intelligence</div>
-                <h3>Strategic Enterprise</h3>
-                <p class="package-summary">Forensic screening for C-suite and executives.</p>
-                <div class="package-tier">Advanced</div>
-                <ul class="bullet-list">
-                  <li><span class="check">✓</span><span>All Growth Partner features</span></li>
-                  <li><span class="check">✓</span><span>Criminal Record & Litigation Check</span></li>
-                  <li><span class="check">✓</span><span>Reference Calls (3 contacts)</span></li>
-                </ul>
-                <button class="btn-primary" style="width:100%; margin-top:28px;" data-open-modal data-
-  service="Strategic Enterprise Package">Select Package</button>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section why-section">
-          <div class="container">
-            <div class="two-col why-layout">
-              <div>
-                <p class="eyebrow" style="color:#7dd3fc;">Why Hire Right Solution</p>
-                <h2 class="section-title">A standalone Vietnam services brand that can support both
-  growth and control.</h2>
-                <p class="section-copy" style="color:rgba(219,234,254,0.86);">
-                  The strongest version of this landing page should combine real operator credibility
-  with commercial clarity. That means presenting not only what you do, but why a buyer should trust your
-  process, your local execution discipline, and your ability to manage sensitive work.
-                </p>
-              </div>
-              <div class="why-grid">
-                <article class="why-card">
-                  <h3>Risk-Controlled Screening</h3>
-                  <p>Candidate verification should feel structured, documented, and employer-ready
-  rather than improvised or opaque.</p>
-                </article>
-                <article class="why-card">
-                  <h3>Decision-Maker Credibility</h3>
-                  <p>This is where your actual certifications, client names, and team credentials should
-  materially strengthen conversion.</p>
-                </article>
-                <article class="why-card">
-                  <h3>Search Discipline</h3>
-                  <p>Executive search should show process rigor, stakeholder alignment, and
-  confidentiality instead of sounding like standard recruitment copy.</p>
-                </article>
-                <article class="why-card">
-                  <h3>Operational Continuity</h3>
-                  <p>Payroll support messaging should communicate recurring reliability and local
-  process confidence for employers growing in Vietnam.</p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="faq" class="section">
-          <div class="container">
-            <div class="light-center">
-              <p class="eyebrow" style="color:#2563eb;">FAQ</p>
-              <h2 class="section-title" style="color:#020617;">Frequently asked questions about
-  screening, search, and payroll outsourcing in Vietnam.</h2>
-              <p class="section-copy" style="color:#475569;">
-                These supporting questions help both buyers and search engines understand the service
-  intent behind the page.
-              </p>
-            </div>
-            <div class="faq-grid">
-              <article class="faq-card">
-                <h3>What does a background check in Vietnam usually include?</h3>
-                <p>A standard scope may include identity verification, employment history checks,
-  education verification, reference checks, and where applicable, criminal-record coordination. The
-  final scope should match the role risk level and your hiring policy.</p>
-              </article>
-              <article class="faq-card">
-                <h3>When should a company use executive search in Vietnam instead of general
-  recruitment?</h3>
-                <p>Executive search is better suited to confidential mandates, leadership hires,
-  specialist positions, and cases where direct outreach to passive talent is necessary. It adds process
-  control and stakeholder discipline to higher-value searches.</p>
-              </article>
-              <article class="faq-card">
-                <h3>What does Vietnam payroll outsourcing help solve?</h3>
-                <p>Payroll outsourcing helps employers reduce recurring administrative load, improve
-  reporting consistency, and operate with more confidence around local payroll coordination
-  requirements.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-grid">
-            <div>
-              <h2 style="margin:0; font-size:2rem;">Hire Right Solution</h2>
-              <p style="margin-top:16px; line-height:1.8;">
-                A standalone service brand for employers who need background check Vietnam support,
-  executive search Vietnam capabilities, and Vietnam payroll outsourcing guidance in one commercially
-  coherent platform.
-              </p>
-              <button class="btn-primary" style="margin-top:22px;" data-open-modal>Schedule a
-  Consultation</button>
-            </div>
-            <div>
-              <h3 style="margin:0; font-size:0.84rem; letter-spacing:0.24em; text-
-  transform:uppercase;">Explore</h3>
-              <ul class="footer-list">
-                <li><a href="#services">Core Services</a></li>
-                <li><a href="#proof">Proof Structure</a></li>
-                <li><a href="#packages">Packages</a></li>
-                <li><a href="#faq">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="margin:0; font-size:0.84rem; letter-spacing:0.24em; text-
-  transform:uppercase;">Utility Links</h3>
-              <ul class="footer-list">
-                <li><a href="#top">Top of Page</a></li>
-                <li><a href="#services">Service Overview</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 style="margin:0; font-size:0.84rem; letter-spacing:0.24em; text-
-  transform:uppercase;">Contact</h3>
-              <ul class="footer-list">
-                <li><a href="mailto:info@hirerightsolution.com">info@hirerightsolution.com</a></li>
-                <li><a href="tel:+84362521530">+84 36 252 1530</a></li>
-                <li><a href="https://hirerightsolution.com" target="_blank"
-  rel="noreferrer">hirerightsolution.com</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer-bottom">© <span id="year"></span> Hire Right Solution. All rights
-  reserved.</div>
-        </div>
-      </footer>
-
-      <div class="modal" id="modal">
-        <div class="modal-card">
-          <button class="modal-close" id="closeModal" aria-label="Close">×</button>
-          <div id="formState">
-            <h3 style="margin:0; font-size:2rem; color:#172554;">Schedule a Consultation</h3>
-            <p style="margin:10px 0 0; color:#6b7280; line-height:1.7;">
-              Share your hiring or operating needs in Vietnam. We will use this information to
-  understand the service scope before follow-up.
-            </p>
-            <form id="consultationForm" class="form-grid">
-              <div class="field">
-                <label for="fullName">Full Name</label>
-                <input class="input" id="fullName" type="text" required />
-              </div>
-              <div class="field">
-                <label for="workEmail">Work Email</label>
-                <input class="input" id="workEmail" type="email" required />
-              </div>
-              <div class="field">
-                <label for="company">Company</label>
-                <input class="input" id="company" type="text" />
-              </div>
-              <div class="field">
-                <label for="service">Interested Service</label>
-                <select class="input" id="service">
-                  <option>Market Seed Package</option>
-                  <option selected>Growth Partner Package</option>
-                  <option>Strategic Enterprise Package</option>
-                  <option>Background Check Vietnam</option>
-                  <option>Executive Search Vietnam</option>
-                  <option>Vietnam Payroll Outsourcing</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="context">Hiring Volume or Team Context</label>
-                <input class="input" id="context" type="text" />
-              </div>
-              <div class="field">
-                <label for="message">Message</label>
-                <textarea class="input" id="message" rows="4"></textarea>
-              </div>
-              <button class="btn-primary" type="submit">Submit Request</button>
-            </form>
-          </div>
-          <div class="success" id="successState">
-            <h3 style="margin:0; font-size:2rem; color:#172554;">Consultation request captured</h3>
-            <p style="margin-top:14px; color:#475569; line-height:1.8;">
-              Thank you. Our team now has the context needed to review your request and prepare the
-  right next-step discussion around screening, search, or payroll support in Vietnam.
-            </p>
-            <button class="btn-primary" id="doneButton" style="margin-top:22px;">Close</button>
-          </div>
-        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
       </div>
 
-      <script>
-        const modal = document.getElementById("modal");
-        const closeModal = document.getElementById("closeModal");
-        const form = document.getElementById("consultationForm");
-        const formState = document.getElementById("formState");
-        const successState = document.getElementById("successState");
-        const serviceField = document.getElementById("service");
+      <div class="mobile-panel" id="mobilePanel">
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#packages">Packages</a>
+        <a href="#faq">FAQ</a>
+        <button data-open-modal>Schedule a Consultation</button>
+      </div>
+    </nav>
 
-        document.getElementById("year").textContent = new Date().getFullYear();
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <div class="container">
+            <p class="eyebrow" style="color:#bfdbfe; margin:0 0 24px;">Hire Right Solution</p>
+            <h1 class="hero-title">
+              Executive Search, Background Check, and Payroll Outsourcing in Vietnam.
+            </h1>
+            <p class="hero-copy">
+              Hire Right Solution helps employers enter, hire, screen, and operate in Vietnam with
+              background verification workflows, confidential executive search support, and payroll
+              outsourcing coordination designed for local execution.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-primary" data-open-modal>
+                Schedule a Consultation <span class="arrow">→</span>
+              </button>
+              <a class="btn-secondary" href="#services">Explore Core Services <span class="arrow">→</span></a>
+            </div>
 
-        function openModal(service) {
-          if (service) serviceField.value = service;
-          modal.classList.add("open");
-          document.body.style.overflow = "hidden";
+            <div class="hero-grid">
+              <article class="glass-card">
+                <div class="icon">🌐</div>
+                <h3>Vietnam-Focused</h3>
+                <p>Background screening, executive search, and payroll support built for local hiring and operating realities.</p>
+              </article>
+              <article class="glass-card">
+                <div class="icon">🛡️</div>
+                <h3>Employer-Grade</h3>
+                <p>Structured workflows designed for hiring teams, finance leads, and regional operators who need dependable execution.</p>
+              </article>
+              <article class="glass-card">
+                <div class="icon">🔒</div>
+                <h3>Confidential Delivery</h3>
+                <p>Suitable for sensitive leadership searches, candidate screening, and internal stakeholder coordination.</p>
+              </article>
+              <article class="glass-card">
+                <div class="icon">👥</div>
+                <h3>Consultative Support</h3>
+                <p>Strategic guidance for employers entering Vietnam or tightening risk controls around local operations.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proof" class="section dark-section">
+        <div class="container">
+          <div class="two-col proof-grid">
+            <div>
+              <p class="eyebrow" style="color:#7dd3fc; margin:0;">Proof and Positioning</p>
+              <h2 class="section-title">Trusted operational support for employers hiring and operating in Vietnam.</h2>
+              <p class="section-copy" style="color:#cbd5e1;">
+                Buyers evaluating a new service partner need more than a promise. They need to understand how screening, search, and payroll support are delivered, how risk is controlled, and why the operating approach is dependable in a Vietnam context.
+              </p>
+            </div>
+
+            <div class="proof-cards">
+              <article class="dark-card">
+                <h3>Structured Screening Delivery</h3>
+                <p>Candidate intake, consent handling, verification tracking, and reporting are framed as repeatable workflows rather than ad-hoc follow-up.</p>
+              </article>
+              <article class="dark-card">
+                <h3>Search Process Control</h3>
+                <p>Executive search engagements benefit from clearer role calibration, target mapping, stakeholder alignment, and confidential outreach discipline.</p>
+              </article>
+              <article class="dark-card">
+                <h3>Operational Continuity</h3>
+                <p>Payroll and back-office support are positioned to reduce local execution risk for employers building or scaling teams in Vietnam.</p>
+              </article>
+              <article class="dark-card">
+                <h3>Buyer Confidence Signals</h3>
+                <p>References, measurable outcomes, compliance credentials, and team credibility should reinforce the quality of the service before a buyer commits to a conversation.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="light-center">
+            <p class="eyebrow" style="color:#2563eb; margin:0;">Core Services</p>
+            <h2 class="section-title" style="color:#020617;">Core services for employers hiring and operating in Vietnam.</h2>
+            <p class="section-copy" style="color:#475569;">
+              Each service area is positioned around a real operational need: hiring verification, confidential talent acquisition, or recurring payroll support.
+            </p>
+          </div>
+
+          <div class="services-wrap">
+            <article class="service-card">
+              <div>
+                <span class="service-badge">Background Check Vietnam</span>
+                <h3>Pre-employment screening built for Vietnam hiring and compliance workflows.</h3>
+                <p class="copy">
+                  Hire Right Solution manages identity checks, employment verification, education validation, reference checks, and criminal-record coordination through a structured employer-ready workflow.
+                </p>
+                <button class="btn-primary" style="margin-top:32px; background:#020617;" data-open-modal data-service="Growth Partner Package">
+                  Request a Background Check Consultation <span class="arrow">→</span>
+                </button>
+              </div>
+
+              <div class="service-side">
+                <div class="mini-icon">🛡️</div>
+                <h4>What this service should communicate to buyers</h4>
+                <ul class="bullet-list">
+                  <li><span class="check">✓</span><span>Reduce manual follow-up across HR, operations, and hiring managers.</span></li>
+                  <li><span class="check">✓</span><span>Standardize candidate intake, consent, and verification scope management.</span></li>
+                  <li><span class="check">✓</span><span>Support higher-confidence hiring for local teams and cross-border employers.</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="service-card inverse">
+              <div>
+                <span class="service-badge">Executive Search Vietnam</span>
+                <h3>Confidential executive search for critical hires in Vietnam.</h3>
+                <p class="copy">
+                  From calibration and target mapping to discreet outreach and shortlist management, we support executive and specialist hiring where speed, fit, and confidentiality matter.
+                </p>
+                <button class="btn-primary" style="margin-top:32px; background:#0ea5e9;" data-open-modal data-service="Strategic Enterprise Package">
+                  Discuss an Executive Search Mandate <span class="arrow">→</span>
+                </button>
+              </div>
+
+              <div class="service-side">
+                <div class="mini-icon">💼</div>
+                <h4>What this service should communicate to buyers</h4>
+                <ul class="bullet-list">
+                  <li><span class="check">✓</span><span>Designed for leadership, specialist, and hard-to-fill commercial or operational roles.</span></li>
+                  <li><span class="check">✓</span><span>Sharper stakeholder alignment before outreach starts.</span></li>
+                  <li><span class="check">✓</span><span>Cleaner process control for confidential or business-critical mandates.</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div>
+                <span class="service-badge">Vietnam Payroll Outsourcing</span>
+                <h3>Payroll outsourcing support that reduces administrative friction in Vietnam.</h3>
+                <p class="copy">
+                  We help employers coordinate payroll operations, reporting readiness, and recurring processing needs so finance and people teams can work with more consistency and less local complexity.
+                </p>
+                <button class="btn-primary" style="margin-top:32px; background:#020617;" data-open-modal data-service="Vietnam Payroll Outsourcing">
+                  Talk About Payroll Outsourcing <span class="arrow">→</span>
+                </button>
+              </div>
+
+              <div class="service-side">
+                <div class="mini-icon">🏛️</div>
+                <h4>What this service should communicate to buyers</h4>
+                <ul class="bullet-list">
+                  <li><span class="check">✓</span><span>Support monthly payroll coordination and reporting discipline.</span></li>
+                  <li><span class="check">✓</span><span>Reduce operational drag for new entities and scaling teams.</span></li>
+                  <li><span class="check">✓</span><span>Fit alongside accounting, market-entry, and local operating support.</span></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section validation-section">
+        <div class="container">
+          <div class="two-col validation-grid">
+            <div>
+              <p class="eyebrow" style="color:#2563eb; margin:0;">Buyer Validation</p>
+              <h2 class="section-title" style="color:#020617;">What serious buyers want to verify before they engage a service partner.</h2>
+              <p class="section-copy" style="color:#475569;">
+                The strongest service pages do not rely only on positioning. They also help employers validate experience, delivery discipline, and execution credibility before the first call.
+              </p>
+              <div class="validation-callout">
+                <div class="eyebrow" style="letter-spacing:0.22em; color:#1d4ed8; margin:0;">What to Surface Prominently</div>
+                <p style="margin:12px 0 0; line-height:1.8;">
+                  Client names, turnaround metrics, case studies, team credentials, and compliance badges should appear close to the top of the page to reduce uncertainty and improve conversion quality.
+                </p>
+              </div>
+            </div>
+
+            <div class="validation-cards">
+              <article class="card">
+                <div class="eyebrow" style="letter-spacing:0.22em; color:#2563eb; margin:0;">Client References and Outcomes</div>
+                <p style="color:#475569; font-size:1.125rem; line-height:1.8;">Employers evaluating a new service partner want evidence that the work has been done before and that the outcomes were commercially useful, not just operationally completed.</p>
+              </article>
+              <article class="card">
+                <div class="eyebrow" style="letter-spacing:0.22em; color:#2563eb; margin:0;">Compliance and Delivery Standards</div>
+                <p style="color:#475569; font-size:1.125rem; line-height:1.8;">Confidence improves when buyers can see how screening, payroll, and search work are governed, documented, and aligned to local operating expectations.</p>
+              </article>
+              <article class="card">
+                <div class="eyebrow" style="letter-spacing:0.22em; color:#2563eb; margin:0;">Team Credibility and Specialization</div>
+                <p style="color:#475569; font-size:1.125rem; line-height:1.8;">Decision-makers need clarity on who is behind the service, how experienced the team is, and why the engagement should be trusted for sensitive or business-critical work.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="packages" class="section" style="border-top:1px solid #f3f4f6;">
+        <div class="container">
+          <div class="light-center" style="margin-bottom:64px;">
+            <p class="eyebrow" style="color:#2563eb; margin:0;">Packages</p>
+            <h2 class="section-title" style="color:#172554;">Strategic Service Packages</h2>
+            <p class="section-copy" style="color:#475569;">
+              Choose the screening depth that fits your hiring risk level, candidate seniority, and internal verification requirements.
+            </p>
+          </div>
+
+          <div class="packages-grid">
+            <article class="package-card standard">
+              <div class="package-kicker">Background Check for Entry-Level Hiring</div>
+              <h3>Market Seed</h3>
+              <p class="package-summary">Ideal for entry-level and operational roles.</p>
+              <div class="package-tier">Basic</div>
+              <ul class="bullet-list">
+                <li><span class="check">✓</span><span>Identity Vetting (ID/Passport)</span></li>
+                <li><span class="check">✓</span><span>Basic Employment History (1 Past Employer)</span></li>
+                <li><span class="check">✓</span><span>Standard E-Consent Portal Access</span></li>
+              </ul>
+              <button class="btn-outline" style="width:100%; margin-top:32px;" data-open-modal data-service="Market Seed Package">Select Package</button>
+            </article>
+
+            <article class="package-card featured">
+              <div class="popular-pill">Most Popular</div>
+              <div class="package-kicker">Mid-Level Screening and Reference Verification</div>
+              <h3>Growth Partner</h3>
+              <p class="package-summary">Comprehensive vetting for mid-level management.</p>
+              <div class="package-tier">Standard</div>
+              <ul class="bullet-list">
+                <li><span class="check">✓</span><span>All Market Seed features</span></li>
+                <li><span class="check">✓</span><span>Social Insurance vs. CV Cross-checking</span></li>
+                <li><span class="check">✓</span><span>Education & Degree Verification</span></li>
+                <li><span class="check">✓</span><span>Reference Calls (2 contacts)</span></li>
+              </ul>
+              <button class="btn-primary" style="width:100%; margin-top:32px; background:#2563eb;" data-open-modal data-service="Growth Partner Package">Select Package</button>
+            </article>
+
+            <article class="package-card standard">
+              <div class="package-kicker">Executive Screening and Risk Intelligence</div>
+              <h3>Strategic Enterprise</h3>
+              <p class="package-summary">Forensic screening for C-suite and executives.</p>
+              <div class="package-tier">Advanced</div>
+              <ul class="bullet-list">
+                <li><span class="check">✓</span><span>All Growth Partner features</span></li>
+                <li><span class="check">✓</span><span>Criminal Record & Litigation Check</span></li>
+                <li><span class="check">✓</span><span>Reference Calls (3 contacts)</span></li>
+              </ul>
+              <button class="btn-outline" style="width:100%; margin-top:32px;" data-open-modal data-service="Strategic Enterprise Package">Select Package</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background:#172554; color:#fff;">
+        <div class="container">
+          <div class="two-col" style="grid-template-columns:1fr 1fr;">
+            <div>
+              <p class="eyebrow" style="color:#7dd3fc; margin:0;">Why Hire Right Solution</p>
+              <h2 class="section-title">A standalone Vietnam services brand that can support both growth and control.</h2>
+              <p class="section-copy" style="color:rgba(219,234,254,0.85);">
+                The strongest version of this landing page should combine real operator credibility with commercial clarity. That means presenting not only what you do, but why a buyer should trust your process, your local execution discipline, and your ability to manage sensitive work.
+              </p>
+            </div>
+
+            <div class="why-grid">
+              <article class="why-card">
+                <div class="mini-icon">🛡️</div>
+                <h3 style="margin-top:16px;">Risk-Controlled Screening</h3>
+                <p>Candidate verification should feel structured, documented, and employer-ready rather than improvised or opaque.</p>
+              </article>
+              <article class="why-card">
+                <div class="mini-icon">🏅</div>
+                <h3 style="margin-top:16px;">Decision-Maker Credibility</h3>
+                <p>This is where your actual certifications, client names, and team credentials should materially strengthen conversion.</p>
+              </article>
+              <article class="why-card">
+                <div class="mini-icon">🔎</div>
+                <h3 style="margin-top:16px;">Search Discipline</h3>
+                <p>Executive search should show process rigor, stakeholder alignment, and confidentiality instead of sounding like standard recruitment copy.</p>
+              </article>
+              <article class="why-card">
+                <div class="mini-icon">⏱️</div>
+                <h3 style="margin-top:16px;">Operational Continuity</h3>
+                <p>Payroll support messaging should communicate recurring reliability and local process confidence for employers growing in Vietnam.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container">
+          <div class="light-center">
+            <p class="eyebrow" style="color:#2563eb; margin:0;">FAQ</p>
+            <h2 class="section-title" style="color:#020617;">Frequently asked questions about screening, search, and payroll outsourcing in Vietnam.</h2>
+            <p class="section-copy" style="color:#475569;">
+              These supporting questions help both buyers and search engines understand the service intent behind the page.
+            </p>
+          </div>
+
+          <div class="faq-grid" style="margin-top:64px;">
+            <article class="faq-card">
+              <h3>What does a background check in Vietnam usually include?</h3>
+              <p style="color:#475569; line-height:1.9;">A standard scope may include identity verification, employment history checks, education verification, reference checks, and where applicable, criminal-record coordination. The final scope should match the role risk level and your hiring policy.</p>
+            </article>
+            <article class="faq-card">
+              <h3>When should a company use executive search in Vietnam instead of general recruitment?</h3>
+              <p style="color:#475569; line-height:1.9;">Executive search is better suited to confidential mandates, leadership hires, specialist positions, and cases where direct outreach to passive talent is necessary. It adds process control and stakeholder discipline to higher-value searches.</p>
+            </article>
+            <article class="faq-card">
+              <h3>What does Vietnam payroll outsourcing help solve?</h3>
+              <p style="color:#475569; line-height:1.9;">Payroll outsourcing helps employers reduce recurring administrative load, improve reporting consistency, and operate with more confidence around local payroll coordination requirements.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h2 style="margin:0; font-size:2rem;">Hire Right Solution</h2>
+            <p style="margin-top:16px;">
+              A standalone service brand for employers who need background check Vietnam support, executive search Vietnam capabilities, and Vietnam payroll outsourcing guidance in one commercially coherent platform.
+            </p>
+            <button class="btn-primary" style="margin-top:24px; background:#2563eb;" data-open-modal>
+              Schedule a Consultation <span class="arrow">→</span>
+            </button>
+          </div>
+
+          <div>
+            <h3 style="margin:0; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase;">Explore</h3>
+            <ul class="footer-list">
+              <li><a href="#services">Core Services</a></li>
+              <li><a href="#proof">Proof Structure</a></li>
+              <li><a href="#packages">Packages</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:0; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase;">Utility Links</h3>
+            <ul class="footer-list">
+              <li><a href="#top">Top of Page</a></li>
+              <li><a href="#services">Service Overview</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="margin:0; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase;">Contact</h3>
+            <ul class="footer-list">
+              <li><a href="mailto:info@hirerightsolution.com">info@hirerightsolution.com</a></li>
+              <li><a href="tel:+84362521530">+84 36 252 1530</a></li>
+              <li><a href="https://hirerightsolution.com" target="_blank" rel="noreferrer">hirerightsolution.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">© <span id="currentYear"></span> Hire Right Solution. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <div class="modal" id="consultationModal" aria-hidden="true">
+      <div class="modal-card">
+        <button class="modal-close" id="closeModal" aria-label="Close modal">×</button>
+        <div id="formWrap">
+          <h3 style="margin:0 0 8px; color:#172554; font-size:2rem;">Schedule a Consultation</h3>
+          <p style="margin:0; color:#6b7280; line-height:1.7;">
+            Share your hiring or operating needs in Vietnam. We will use this information to understand the service scope before follow-up.
+          </p>
+
+          <form class="form-grid" id="consultationForm">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input class="input-light" id="fullName" name="fullName" type="text" placeholder="John Doe" required />
+            </div>
+            <div class="field">
+              <label for="workEmail">Work Email</label>
+              <input class="input-light" id="workEmail" name="workEmail" type="email" placeholder="john@company.com" required />
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input class="input-light" id="company" name="company" type="text" placeholder="Your company name" />
+            </div>
+            <div class="field">
+              <label for="service">Interested Service</label>
+              <select class="input-light" id="service" name="service">
+                <option>Market Seed Package</option>
+                <option selected>Growth Partner Package</option>
+                <option>Strategic Enterprise Package</option>
+                <option>Background Check Vietnam</option>
+                <option>Executive Search Vietnam</option>
+                <option>Vietnam Payroll Outsourcing</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="teamContext">Hiring Volume or Team Context</label>
+              <input class="input-light" id="teamContext" name="teamContext" type="text" placeholder="Example: 20 hires in Ho Chi Minh City" />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea class="input-light" id="message" name="message" rows="4" placeholder="Tell us about your hiring, screening, or payroll needs in Vietnam..."></textarea>
+            </div>
+            <p class="submit-note">
+              We use this information to understand your scope, recommend the right service path, and prepare a more useful first conversation.
+            </p>
+            <button class="btn-primary" type="submit" style="width:100%; background:#1e3a8a;">Submit Request</button>
+          </form>
+        </div>
+
+        <div class="success-box" id="successBox">
+          <div class="success-icon">✓</div>
+          <h3 style="margin:24px 0 0; color:#172554; font-size:2rem;">Consultation request captured</h3>
+          <p style="margin-top:12px; color:#475569; line-height:1.8;">
+            Thank you. Our team now has the context needed to review your request and prepare the right next-step discussion around screening, search, or payroll support in Vietnam.
+          </p>
+          <button class="btn-primary" id="successClose" style="margin-top:24px; background:#1e3a8a;">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const mobileToggle = document.getElementById("mobileToggle");
+      const mobilePanel = document.getElementById("mobilePanel");
+      const modal = document.getElementById("consultationModal");
+      const closeModal = document.getElementById("closeModal");
+      const successClose = document.getElementById("successClose");
+      const form = document.getElementById("consultationForm");
+      const serviceField = document.getElementById("service");
+      const formWrap = document.getElementById("formWrap");
+      const successBox = document.getElementById("successBox");
+
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      function openModal(serviceLabel) {
+        if (serviceLabel) {
+          serviceField.value = serviceLabel;
         }
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
 
-        function hideModal() {
-          modal.classList.remove("open");
-          document.body.style.overflow = "";
-          form.reset();
-          serviceField.value = "Growth Partner Package";
-          formState.style.display = "block";
-          successState.classList.remove("open");
+      function resetModal() {
+        form.reset();
+        serviceField.value = "Growth Partner Package";
+        formWrap.style.display = "block";
+        successBox.classList.remove("open");
+      }
+
+      function hideModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      mobileToggle.addEventListener("click", () => {
+        mobilePanel.classList.toggle("open");
+        mobileToggle.textContent = mobilePanel.classList.contains("open") ? "×" : "☰";
+      });
+
+      document.querySelectorAll("[data-open-modal]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const service = button.getAttribute("data-service");
+          openModal(service);
+          mobilePanel.classList.remove("open");
+          mobileToggle.textContent = "☰";
+        });
+      });
+
+      document.querySelectorAll(".mobile-panel a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobilePanel.classList.remove("open");
+          mobileToggle.textContent = "☰";
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        hideModal();
+        resetModal();
+      });
+
+      successClose.addEventListener("click", () => {
+        hideModal();
+        resetModal();
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          hideModal();
+          resetModal();
         }
+      });
 
-        document.querySelectorAll("[data-open-modal]").forEach((button) => {
-          button.addEventListener("click", () => openModal(button.getAttribute("data-service")));
-        });
-
-        closeModal.addEventListener("click", hideModal);
-        document.getElementById("doneButton").addEventListener("click", hideModal);
-
-        modal.addEventListener("click", (event) => {
-          if (event.target === modal) hideModal();
-        });
-
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
-          formState.style.display = "none";
-          successState.classList.add("open");
-        });
-      </script>
-    </body>
-  </html>
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        formWrap.style.display = "none";
+        successBox.classList.add("open");
+      });
+    </script>
+  </body>
+</html>
